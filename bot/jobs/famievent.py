@@ -68,7 +68,8 @@ def event(bot, update):
             if duplicate:
                 return
             red.lpush('famievent', fami.img)
-            text = '<b>[最新活動]</b>\n' \
+            red.ltrim('famievent', 0, 100)
+            text = '<b>[Fami 最新活動]</b>\n' \
                 f'{escape(fami.title)}\n' \
                 f'簡述：{escape(fami.desc)}\n' \
                 f'期間：{fami.date}'
@@ -108,7 +109,8 @@ def new_goods(bot, update):
                 '''
                 new_line = '\n'
                 red.lpush('famievent', fami.img)
-                text = '<b>[新品情報]</b>\n' \
+                red.ltrim('famievent', 0, 100)
+                text = '<b>[Fami 新品情報]</b>\n' \
                     f'{escape(fami.title)} <code>{fami.price}$</code>\n' \
                     f'{escape(fami.desc)}\n' \
                     f"{f'時間：{fami.date}{new_line}' if fami.date else ''}" \
