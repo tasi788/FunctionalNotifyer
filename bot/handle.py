@@ -16,7 +16,7 @@ import datetime
 
 # Custom
 import command
-from jobs import hachicat_japan, famievent, okmart
+from jobs import hachicat_japan, famievent, okmart, hilife
 
 
 class MQBot(telegram.bot.Bot):
@@ -86,7 +86,7 @@ def worker(inherit, **kwargs):
 
     job.run_repeating(callback=famievent.event, interval=3600, first=5)
     job.run_repeating(callback=famievent.new_goods, interval=3600, first=5)
-    job.run_repeating(callback=okmart.promotion1, interval=3600, first=5)
+    job.run_repeating(callback=hilife.events, interval=3600, first=5)
 
     job.start()
 
