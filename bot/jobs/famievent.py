@@ -10,8 +10,7 @@ config = ConfigParser()
 config.read('config.txt')
 master = config.getint('admin', 'master')
 red = db_tools.use_redis()
-#group = -1001418862434
-group = 525239263
+group = -1001418862434
 
 
 class famimart:
