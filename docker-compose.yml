@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  bot:
+    build: .
+    restart: always
+    volumes:
+      - ./bot:/app
+
+  redis:
+    image: redis
+    volumes:
+      - ./redisdata/:/data
+    restart: always
