@@ -84,7 +84,7 @@ def worker(inherit, **kwargs):
     job.run_daily(callback=hachicat_japan.birthday, time=datetime.time(7, 30))
 
     job.run_repeating(callback=famievent.event, interval=3600, first=5)
-    #job.run_repeating(callback=famievent.new_goods, interval=3600, first=5)
+    job.run_repeating(callback=famievent.new_goods, interval=3600, first=5)
 
     job.start()
 
