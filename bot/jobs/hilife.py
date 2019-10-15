@@ -35,8 +35,12 @@ def events(bot, update):
         url = x('a').attr('href')
         content = x('a').text()
         if checker(url) == False:
+            if 'http' in url:
+                but = url
+            else:
+                but = base_url + url.replace(' ', '')
             button = InlineKeyboardMarkup(
-                [[InlineKeyboardButton('點我前往', url=url.replace(' ', ''))]])
+                [[InlineKeyboardButton('點我前往', url=but)]])
 
             text = '[Hi-Life 最新消息]\n' + \
                 content + '\n' + \
