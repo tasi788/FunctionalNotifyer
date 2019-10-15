@@ -75,9 +75,12 @@ def event(bot, update):
                 f'期間：{fami.date}'
             button = InlineKeyboardMarkup(
                 [[InlineKeyboardButton('點我前往', url=fami.link.replace(' ', ''))]])
-            bot.send_message(group, text,
-                             reply_markup=button, parse_mode='html', disable_web_page_preview=True)
-            sleep(5)
+            try:
+                bot.send_message(group, text,
+                                 reply_markup=button, parse_mode='html', disable_web_page_preview=True)
+            except:
+                bot.send_message(group, text, parse_mode='html',
+                                 disable_web_page_preview=True)
 
 
 def new_goods(bot, update):
