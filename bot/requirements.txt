@@ -5,7 +5,7 @@ certifi==2019.3.9
 cffi==1.12.3
 chardet==3.0.4
 coloredlogs==10.0
-cryptography==3.2
+cryptography==3.3.2
 cssselect==1.0.3
 future==0.17.1
 humanfriendly==4.18
