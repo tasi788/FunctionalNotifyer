@@ -1,0 +1,6 @@
+- services: plurk
+  id: 123123
+  job: 好色龍噗浪
+  chat_id:
+    - 5123
+    - -1000
